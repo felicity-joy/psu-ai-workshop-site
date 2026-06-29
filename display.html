@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="หน้าจอสำหรับแชร์ในช่วง Self-Guided 10:30-11:15 น.">
+  <title>Self-Guided Display — AI for Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="display-page">
+  <header>
+    <h1>⏱️ ช่วงปฏิบัติการแบบ Self-Guided</h1>
+    <div class="status">วิทยากรไม่อยู่ห้อง · 10:30 – 11:15 น.</div>
+  </header>
+
+  <main>
+    <section class="countdown-box">
+      <div class="countdown-label">เหลือเวลา</div>
+      <div class="countdown-time" id="countdown">--:--</div>
+      <div class="current-exercise" id="current">กำลังโหลด...</div>
+    </section>
+
+    <aside class="display-side">
+      <div class="display-card">
+        <h2>📋 กำหนดการ</h2>
+        <table class="display-schedule" id="schedule">
+          <tr data-start="10:30" data-end="10:45"><td class="time">10:30–10:45</td><td>ข้อ 1: สรุปรายงานการประชุม</td></tr>
+          <tr data-start="10:45" data-end="11:00"><td class="time">10:45–11:00</td><td>ข้อ 2: จัดระเบียบข้อมูล</td></tr>
+          <tr data-start="11:00" data-end="11:15"><td class="time">11:00–11:15</td><td>ข้อ 3: ร่างเอกสารราชการ</td></tr>
+        </table>
+      </div>
+
+      <div class="display-card">
+        <h2>✅ กฎเบื้องต้น</h2>
+        <ul class="display-rules">
+          <li>ทำตามลำดับ ข้อ 1 → ข้อ 2 → ข้อ 3</li>
+          <li>แต่ละข้อ 15 นาที หากเกินให้ข้ามไปข้อถัดไป</li>
+          <li>เฉลยอยู่ในเอกสาร — เปิดดูหลังลองทำเอง</li>
+          <li>เครื่องมือใดใช้ไม่ได้ ให้สลับไปอีกเครื่องมือ</li>
+        </ul>
+      </div>
+
+      <div class="display-card display-links">
+        <h2>🔗 ลิงก์สำหรับผู้เข้าร่วม</h2>
+        <div><strong>เอกสาร:</strong> <a href="https://psu-workshop.tanwa.info/self-guided.html">psu-workshop.tanwa.info/self-guided.html</a></div>
+        <div style="margin-top:var(--s-3)"><strong>ChatGPT:</strong> chatgpt.com · <strong>Claude:</strong> claude.ai</div>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    วิทยากรกลับมาสรุปและตอบคำถามเวลา 11:15 น.
+  </footer>
+
+  <script>
+    const blocks = [
+      { start: '10:30', end: '10:45', label: 'ข้อ 1: สรุปรายงานการประชุม' },
+      { start: '10:45', end: '11:00', label: 'ข้อ 2: จัดระเบียบข้อมูล' },
+      { start: '11:00', end: '11:15', label: 'ข้อ 3: ร่างเอกสารราชการ' }
+    ];
+    const endTime = '11:15';
+
+    function parseTime(str, now) {
+      const [h, m] = str.split(':').map(Number);
+      const d = new Date(now);
+      d.setHours(h, m, 0, 0);
+      return d;
+    }
+
+    function pad(n) { return n.toString().padStart(2, '0'); }
+
+    function update() {
+      const now = new Date();
+      const end = parseTime(endTime, now);
+      const diff = end - now;
+
+      const cd = document.getElementById('countdown');
+      const cur = document.getElementById('current');
+
+      if (diff <= 0) {
+        cd.textContent = '00:00';
+        cur.textContent = '🎉 สิ้นสุดช่วง Self-Guided';
+      } else {
+        const totalMinutes = Math.floor(diff / 60000);
+        const seconds = Math.floor((diff % 60000) / 1000);
+        cd.textContent = `${pad(totalMinutes)}:${pad(seconds)}`;
+
+        const active = blocks.find(b => {
+          const s = parseTime(b.start, now);
+          const e = parseTime(b.end, now);
+          return now >= s && now < e;
+        });
+        cur.textContent = active ? `ขณะนี้: ${active.label}` : 'พัก / เปลี่ยนข้อ';
+      }
+
+      document.querySelectorAll('#schedule tr').forEach(row => {
+        const s = parseTime(row.dataset.start, now);
+        const e = parseTime(row.dataset.end, now);
+        row.classList.toggle('active', now >= s && now < e);
+      });
+    }
+
+    update();
+    setInterval(update, 1000);
+  </script>
+</body>
+</html>

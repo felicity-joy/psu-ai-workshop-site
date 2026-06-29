@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="แบบฝึกหัดช่วง Self-Guided 10:30-11:15 น. สำหรับการอบรม AI">
+  <title>ปฏิบัติการ Self-Guided — AI for Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a href="#main" class="skip-link">ข้ามไปยังเนื้อหาหลัก</a>
+
+  <nav class="nav" aria-label="เมนูหลัก">
+    <div class="nav__container">
+      <a class="nav__brand" href="index.html">AI for Admin</a>
+      <ul class="nav__links">
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="materials.html">เอกสาร</a></li>
+        <li><a href="self-guided.html" aria-current="page">ปฏิบัติการ</a></li>
+        <li><a href="display.html">หน้าจอ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero__eyebrow">ช่วงปฏิบัติการด้วยตนเอง</div>
+        <h1>Self-<br><span>Guided</span></h1>
+        <p class="hero__meta">
+          10:30 – 11:15 น. · วิทยากรไม่อยู่ห้อง · ทำตามลำดับ ข้อละ 15 นาที
+        </p>
+        <a class="hero__cta" href="#exercise-1">เริ่มข้อ 1</a>
+      </div>
+    </section>
+
+    <section class="section section--sand">
+      <div class="container">
+        <div class="card">
+          <h2>คำแนะนำก่อนเริ่ม</h2>
+          <ul style="margin-bottom:var(--s-5)">
+            <li>เปิดหน้าต่างแชทของเครื่องมือ AI ที่ต้องการใช้ (ChatGPT, Claude, Gemma หรือ qwen)</li>
+            <li>เปิดไฟล์ข้อมูลประกอบจากหน้า <a href="materials.html#data">เอกสาร</a> ให้พร้อม</li>
+          </ul>
+
+          <div class="notice notice--warning">
+            <strong>กฎเบื้องต้น</strong>
+            <ul style="margin:var(--s-3) 0 0 1.2em">
+              <li>ทำตามลำดับ: ข้อ 1 → ข้อ 2 → ข้อ 3</li>
+              <li>แต่ละข้อ 15 นาที หากเกินให้ข้ามไปข้อถัดไปทันที</li>
+              <li>เฉลยอยู่ในแต่ละข้อ — ให้เปิดดูหลังจากพยายามทำด้วยตนเองก่อน</li>
+              <li>หากติดขัด: อ่านเฉลย แล้วลองทำตาม หรือข้ามไปข้อถัดไป</li>
+              <li>หากทำเสร็จเร็ว: ท้าทายเพิ่มเติม หรือลองใช้อีกเครื่องมือหนึ่ง</li>
+            </ul>
+          </div>
+
+          <h3 style="margin-top:var(--s-6)">เครื่องมือที่ใช้ได้</h3>
+          <ul style="margin-bottom:var(--s-5)">
+            <li><strong>ChatGPT</strong>: <a href="https://chatgpt.com" target="_blank" rel="noopener">chatgpt.com</a></li>
+            <li><strong>Claude</strong>: <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a></li>
+            <li><strong>Gemma / qwen</strong>: ผ่านหน้าจอแชทที่จัดเตรียมไว้ (พิมพ์ → กดส่ง → อ่านคำตอบ)</li>
+          </ul>
+
+          <h3>วิธีใช้หน้าจอแชท (สำหรับผู้เริ่มต้น)</h3>
+          <ol class="steps">
+            <li>เปิดหน้าเว็บของเครื่องมือ</li>
+            <li>คลิกช่องพิมพ์ข้อความ (ปกติอยู่ด้านล่างสุด)</li>
+            <li>พิมพ์หรือวางข้อความที่ต้องการถาม</li>
+            <li>กด Enter หรือปุ่มส่ง (ลูกศร/ไอคอนกระดาษ)</li>
+            <li>รอคำตอบปรากฏ</li>
+            <li>หากต้องการถามต่อ ให้พิมพ์ในช่องเดิม</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <article id="exercise-1" class="exercise">
+          <div class="exercise__header">
+            <h2 class="exercise__title">ข้อ 1: ใช้ AI สรุปรายงานการประชุม</h2>
+            <span class="exercise__time">10:30–10:45</span>
+          </div>
+          <span class="exercise__tool">เครื่องมือ: ChatGPT / Claude / Gemma / qwen</span>
+
+          <h3>โจทย์</h3>
+          <p>ใช้ AI สรุปบันทึกข้อความจากการประชุมแผนก ให้เป็นรายงานการประชุมที่อ่านง่าย</p>
+
+          <h3>ขั้นตอน</h3>
+          <ol class="steps">
+            <li>เปิดไฟล์ <a href="data/meeting_minutes_raw.txt" download>meeting_minutes_raw.txt</a> แล้วคัดลอกข้อความทั้งหมด</li>
+            <li>ไปที่หน้าต่างแชทของเครื่องมือ AI</li>
+            <li>วางข้อความลงในช่องพิมพ์ พร้อม Prompt ด้านล่าง แล้วกดส่ง</li>
+          </ol>
+
+          <div class="prompt-box">คุณคือเลขานุการคณะเทคโนโลยีและสิ่งแวดล้อม มหาวิทยาลัยสงขลานครินทร์
+ช่วยสรุปบันทึกการประชุมต่อไปนี้เป็นรายงานการประชุมอย่างกระชับ โดยมีหัวข้อดังนี้:
+1. หัวข้อการประชุม
+2. วันเวลาและสถานที่
+3. ผู้เข้าร่วมประชุม
+4. ประเด็นสำคัญ 3-5 ข้อ
+5. งานที่ต้องดำเนินการ พร้อมผู้รับผิดชอบและกำหนดเวลา
+6. ข้อสังเกตหรือปัญหาที่ควรติดตาม
+
+ข้อกำหนด:
+- ใช้ภาษาทางการแต่เข้าใจง่าย
+- ไม่เกิน 400 คำ
+
+[วางข้อความบันทึกการประชุมที่คัดลอกมา]</div>
+
+          <h3>ตรวจสอบตนเอง</h3>
+          <ul>
+            <li>มีหัวข้อการประชุม</li>
+            <li>มีวันเวลาและสถานที่</li>
+            <li>มีรายชื่อผู้เข้าร่วมประชุม</li>
+            <li>มีประเด็นสำคัญ 3-5 ข้อ</li>
+            <li>มีงานที่ต้องทำ พร้อมผู้รับผิดชอบและกำหนดเวลา</li>
+          </ul>
+
+          <details>
+            <summary>ดูเฉลย (ตัวอย่างโครงสร้าง)</summary>
+            <div class="prompt-box">รายงานการประชุม: ประเมินความคืบหน้าโครงการอบรมบุคลากร
+วันเวลา: 20 มิถุนายน 2569 เวลา 09.00–10.30 น.
+สถานที่: ห้องประชุมคณะเทคโนโลยีและสิ่งแวดล้อม
+ผู้เข้าร่วม: นางสาว A, นาย B, นางสาว C (เลขานุการ)
+
+ประเด็นสำคัญ:
+1. ยืนยันกำหนดการอบรมวันที่ 30 มิถุนายน 2569
+2. อนุมัติงบประมาณค่าอาหารว่างและค่าวิทยากร
+3. กำหนดให้ผู้เข้าร่วมสมัครบัญชี AI ก่อนวันอบรม
+
+งานที่ต้องดำเนินการ:
+- นางสาว A จัดทำรายชื่อผู้เข้าร่วม ภายใน 23 มิ.ย. 2569
+- นาย B ตรวจสอบการเบิกจ่ายงบประมาณ ภายใน 25 มิ.ย. 2569
+- นางสาว C จัดทำเอกสารประกอบ ภายใน 27 มิ.ย. 2569
+
+ข้อสังเกต: ควรส่งลิงก์ลงทะเบียน Zoom ล่วงหน้าอย่างน้อย 3 วัน</div>
+          </details>
+
+          <h3>ท้าทายเพิ่มเติม</h3>
+          <p>ให้ AI แปลงรายงานการประชุมที่ได้ ให้เป็นรูปแบบ “บันทึกข้อความภายใน” สั้นๆ ไม่เกิน 200 คำ</p>
+        </article>
+
+        <article id="exercise-2" class="exercise">
+          <div class="exercise__header">
+            <h2 class="exercise__title">ข้อ 2: ใช้ AI จัดระเบียบข้อมูล</h2>
+            <span class="exercise__time">10:45–11:00</span>
+          </div>
+          <span class="exercise__tool">เครื่องมือ: ChatGPT / Claude / Gemma / qwen</span>
+
+          <h3>โจทย์</h3>
+          <p>ใช้ AI ช่วยแปลงข้อมูลกิจกรรมบุคลากรที่บันทึกไม่เป็นระเบียบ ให้เป็นตารางที่อ่านง่าย</p>
+
+          <h3>หลักการจัดระเบียบข้อมูล</h3>
+          <ul>
+            <li><strong>1 คอลัมน์ = 1 ตัวแปร</strong> เช่น ชื่อ, แผนก, วันที่</li>
+            <li><strong>1 แถว = 1 รายการ</strong> เช่น 1 คน 1 กิจกรรม</li>
+            <li><strong>1 ช่อง = 1 ค่า</strong> ไม่มีข้อมูลหลายค่าในช่องเดียว</li>
+          </ul>
+
+          <h3>ขั้นตอน</h3>
+          <ol class="steps">
+            <li>เปิดไฟล์ <a href="data/untidy_staff_events.csv" download>untidy_staff_events.csv</a> แล้วคัดลอกเนื้อหาทั้งหมด</li>
+            <li>ไปที่หน้าต่างแชทของเครื่องมือ AI</li>
+            <li>วางข้อมูลลงในช่องพิมพ์ พร้อม Prompt ด้านล่าง แล้วกดส่ง</li>
+          </ol>
+
+          <div class="prompt-box">คุณคือเจ้าหน้าที่ฝ่ายวิเคราะห์ข้อมูลของคณะเทคโนโลยีและสิ่งแวดล้อม
+ฉันมีข้อมูลกิจกรรมบุคลากรที่บันทึกไม่เป็นระเบียบ ช่วยแปลงให้เป็นตารางที่อ่านง่าย ตามหลักการ:
+- 1 คอลัมน์ = 1 ตัวแปร
+- 1 แถว = 1 รายการ
+- 1 ช่อง = 1 ค่า
+
+ข้อมูลต้นฉบับ:
+[วางข้อมูล CSV ที่คัดลอกมา]
+
+ข้อกำหนด:
+1. แยกคอลัมน์ออกเป็น: ลำดับ, ชื่อ-นามสกุล, แผนก/งาน, ชื่อกิจกรรม, วันที่จัดกิจกรรม, สถานที่, หมายเหตุ
+2. หากข้อมูลไม่ครบ ให้เว้นว่างไว้ แต่แยกคอลัมน์ถูกต้อง
+3. แสดงผลลัพธ์ในรูปแบบตารางที่อ่านง่าย
+4. อธิบายสั้นๆ ว่าแก้ไขอะไรบ้าง</div>
+
+          <h3>ตรวจสอบตนเอง</h3>
+          <ul>
+            <li>มีคอลัมน์: ลำดับ, ชื่อ-นามสกุล, แผนก/งาน, ชื่อกิจกรรม, วันที่จัดกิจกรรม, สถานที่, หมายเหตุ</li>
+            <li>ไม่มีข้อมูลสองค่าอยู่ในช่องเดียวกัน</li>
+            <li>แต่ละแถวคือ 1 คน 1 กิจกรรม</li>
+          </ul>
+
+          <details>
+            <summary>ดูเฉลย (ตัวอย่างตาราง)</summary>
+            <table>
+              <thead>
+                <tr>
+                  <th>ลำดับ</th>
+                  <th>ชื่อ-นามสกุล</th>
+                  <th>แผนก/งาน</th>
+                  <th>ชื่อกิจกรรม</th>
+                  <th>วันที่จัดกิจกรรม</th>
+                  <th>สถานที่</th>
+                  <th>หมายเหตุ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>นางสาวสมหญิง ใจดี</td>
+                  <td>งานทะเบียน</td>
+                  <td>อบรมการใช้ AI</td>
+                  <td>15 ก.ค. 2568</td>
+                  <td>ห้องประชุม 101</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>นายสมชาย ขยัน</td>
+                  <td>งานการเงิน</td>
+                  <td>ประชุมวางแผนงบ</td>
+                  <td>20 ก.ค. 2568</td>
+                  <td>ห้องประชุม 202</td>
+                  <td>รอเอกสารเพิ่ม</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>นางสมศรี มีน้ำใจ</td>
+                  <td>งานบุคคล</td>
+                  <td>อบรมการใช้ AI</td>
+                  <td>15 ก.ค. 2568</td>
+                  <td>ห้องประชุม 101</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>นายสมปอง รอบคอบ</td>
+                  <td>งานพัสดุ</td>
+                  <td>ตรวจสอบครุภัณฑ์</td>
+                  <td>22 ก.ค. 2568</td>
+                  <td>คลังพัสดุ</td>
+                  <td>ส่งรายงานภายใน 25 ก.ค.</td>
+                </tr>
+              </tbody>
+            </table>
+          </details>
+
+          <h3>ท้าทายเพิ่มเติม</h3>
+          <p>ถาม AI ว่า: <em>“มีกี่คนที่เข้าร่วมกิจกรรมที่ห้องประชุม 101?”</em></p>
+        </article>
+
+        <article id="exercise-3" class="exercise">
+          <div class="exercise__header">
+            <h2 class="exercise__title">ข้อ 3: ใช้ AI ร่างเอกสารราชการ</h2>
+            <span class="exercise__time">11:00–11:15</span>
+          </div>
+          <span class="exercise__tool">เครื่องมือ: ChatGPT / Claude / Gemma / qwen</span>
+
+          <h3>โจทย์</h3>
+          <p>ใช้ AI ช่วยร่างบันทึกข้อความขออนุมัติจัดกิจกรรมอบรม</p>
+
+          <h3>ขั้นตอน</h3>
+          <ol class="steps">
+            <li>ไปที่หน้าต่างแชทของเครื่องมือ AI</li>
+            <li>พิมพ์ Prompt ด้านล่างในช่องพิมพ์ แล้วกดส่ง</li>
+          </ol>
+
+          <div class="prompt-box">คุณคือเจ้าหน้าที่งานเลขานุการของคณะเทคโนโลยีและสิ่งแวดล้อม มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตภูเก็ต
+ช่วยร่างบันทึกข้อความขออนุมัติจัดกิจกรรมอบรม โดยมีรายละเอียดดังนี้:
+
+- ผู้ส่ง: รองคณบดีฝ่ายบริหารและทรัพยากรบุคคล
+- ผู้รับ: คณบดีคณะเทคโนโลยีและสิ่งแวดล้อม
+- วัตถุประสงค์: ขออนุมัติจัดกิจกรรมอบรมเชิงปฏิบัติการ “การใช้ AI เพิ่มประสิทธิภาพการทำงานสำหรับบุคลากรสายอำนวยการ”
+- กลุ่มเป้าหมาย: บุคลากรสายอำนวยการ จำนวน 15 คน
+- กำหนดการ: วันอังคารที่ 30 มิถุนายน 2569 เวลา 09.00–12.00 น. ผ่าน Zoom
+- งบประมาณ: 2,325 บาท (ค่าวิทยากร 1,800 บาท + ค่าอาหารว่าง 525 บาท)
+- ผลที่คาดว่าจะได้รับ: บุคลากรสามารถนำ AI ไปประยุกต์ใช้ในงานประจำได้
+
+ข้อกำหนด:
+- ใช้ภาษาราชการที่สุภาพและกระชับ
+- มีโครงสร้าง: ที่, วันที่, เรื่อง, เรียน, เนื้อหา, ขออนุมัติ, ลงชื่อ
+- ความยาวไม่เกิน 250 คำ</div>
+
+          <h3>ตรวจสอบตนเอง</h3>
+          <ul>
+            <li>มี “ที่” ของบันทึกข้อความ</li>
+            <li>มีวันที่</li>
+            <li>มีเรื่อง</li>
+            <li>มี “เรียน” ผู้รับ</li>
+            <li>มีเนื้อหาสรุปเหตุผล</li>
+            <li>มีการขออนุมัติชัดเจน</li>
+            <li>มีลงชื่อผู้ขออนุมัติ</li>
+          </ul>
+
+          <details>
+            <summary>ดูเฉลย (ตัวอย่างโครงสร้าง)</summary>
+            <div class="prompt-box">ที่ ศธ 0523.1/........
+
+วันที่ ........ .......... ..........
+
+เรื่อง ขออนุมัติจัดกิจกรรมอบรมเชิงปฏิบัติการ เรื่อง การใช้ AI เพิ่มประสิทธิภาพการทำงานสำหรับบุคลากรสายอำนวยการ
+
+เรียน คณบดีคณะเทคโนโลยีและสิ่งแวดล้อม
+
+ตามที่คณะเทคโนโลยีและสิ่งแวดล้อม มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตภูเก็ต
+ได้กำหนดจัดกิจกรรมอบรมเชิงปฏิบัติการ เรื่อง การใช้ AI เพิ่มประสิทธิภาพการทำงาน
+สำหรับบุคลากรสายอำนวยการ จำนวน 15 คน
+ในวันอังคารที่ 30 มิถุนายน 2569 เวลา 09.00–12.00 น. ผ่านระบบ Zoom
+
+เพื่อให้บุคลากรสายอำนวยการสามารถนำเครื่องมือ AI (ChatGPT/Claude/Gemma/qwen) ไปประยุกต์ใช้
+ในงานประจำ เช่น การสรุปรายงานการประชุม การจัดระเบียบข้อมูล และการร่างเอกสาร
+ได้อย่างมีประสิทธิภาพ โดยใช้งบประมาณรวม 2,325 บาท
+(ค่าวิทยากร 1,800 บาท และค่าอาหารว่าง 525 บาท)
+
+ในการนี้ จึงขออนุมัติจัดกิจกรรมดังกล่าวตามรายละเอียดข้างต้น
+และขอความกรุณาพิจารณาอนุมัติ จะเป็นพระคุณอย่างยิ่ง
+
+ขอแสดงความนับถือ
+
+(ลงชื่อ) ...........................
+(ดร.จตุรงค์ คงแก้ว)
+รองคณบดีฝ่ายบริหารและทรัพยากรบุคคล</div>
+          </details>
+
+          <h3>ท้าทายเพิ่มเติม</h3>
+          <p>ให้ AI ช่วยเขียนอีเมลสั้นๆ แจ้งผู้เข้าร่วมอบรม โดยอ้างอิงจากบันทึกข้อความที่ได้</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--mist">
+      <div class="container">
+        <div class="card">
+          <h2>⏰ สรุปเวลา</h2>
+          <table class="exercise-table" style="width:100%;border-collapse:collapse;margin-top:var(--s-5)">
+            <thead>
+              <tr>
+                <th style="text-align:left;padding:var(--s-3) var(--s-4);border-bottom:2px solid var(--line);font-family:var(--font-display);color:var(--purple-deep)">ช่วงเวลา</th>
+                <th style="text-align:left;padding:var(--s-3) var(--s-4);border-bottom:2px solid var(--line);font-family:var(--font-display);color:var(--purple-deep)">กิจกรรม</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">10:30–10:45</td>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">ข้อ 1: สรุปรายงานการประชุม</td>
+              </tr>
+              <tr>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">10:45–11:00</td>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">ข้อ 2: จัดระเบียบข้อมูล</td>
+              </tr>
+              <tr>
+                <td style="padding:var(--s-3) var(--s-4)">11:00–11:15</td>
+                <td style="padding:var(--s-3) var(--s-4)">ข้อ 3: ร่างเอกสารราชการ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h2>🔧 แก้ไขปัญหาเบื้องต้น</h2>
+          <table style="width:100%;border-collapse:collapse;margin-top:var(--s-5)">
+            <thead>
+              <tr>
+                <th style="text-align:left;padding:var(--s-3) var(--s-4);border-bottom:2px solid var(--line);font-family:var(--font-display);color:var(--purple-deep)">ปัญหา</th>
+                <th style="text-align:left;padding:var(--s-3) var(--s-4);border-bottom:2px solid var(--line);font-family:var(--font-display);color:var(--purple-deep)">วิธีแก้ไข</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">ไม่สามารถเข้า ChatGPT ได้</td>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">ลองเปิด Claude, Gemma หรือ qwen แทน</td>
+              </tr>
+              <tr>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">ไม่สามารถเข้า Claude ได้</td>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">ลองเปิด ChatGPT, Gemma หรือ qwen แทน</td>
+              </tr>
+              <tr>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">AI ตอบช้าหรือขึ้นว่า “quota exceeded”</td>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">สลับไปใช้อีกเครื่องมือหนึ่ง หรือรอ 1–2 นาที</td>
+              </tr>
+              <tr>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">ลืมขั้นตอนในแบบฝึกหัด</td>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">เลื่อนกลับไปอ่านเฉลยและทำตาม</td>
+              </tr>
+              <tr>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">ทำไม่ทันภายใน 15 นาที</td>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">ข้ามไปข้อถัดไปทันที แล้วกลับมาทำภายหลังถ้ามีเวลา</td>
+              </tr>
+              <tr>
+                <td style="padding:var(--s-3) var(--s-4)">ไม่เข้าใจคำตอบของ AI</td>
+                <td style="padding:var(--s-3) var(--s-4)">ถาม AI ต่อว่า “อธิบายให้เข้าใจง่ายกว่านี้หน่อย”</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--purple">
+      <div class="container">
+        <h2 style="color:var(--paper);margin-bottom:var(--s-4)">💬 เมื่อวิทยากรกลับมา (11:15 น.)</h2>
+        <p style="color:rgba(255,255,255,.8);max-width:66ch">หากท่านมีข้อสงสัยจากแบบฝึกหัดนี้ กรุณาจดไว้และถามในแชท หรือเปิดไมค์ถามเมื่อวิทยากรกลับมา</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>ผู้ช่วยศาสตราจารย์ ดร.ธันวา อาภรณ์ทิพย์ · คณะเทคโนโลยีและสิ่งแวดล้อม ม.อ. ภูเก็ต</p>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>
