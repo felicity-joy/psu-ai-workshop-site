@@ -3,12 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="แบบฝึกหัดช่วง Self-Guided 10:30-11:15 น. สำหรับการอบรม AI">
+  <meta name="description" content="แบบฝึกหัดช่วงปฏิบัติการด้วยตนเอง 10:30-11:15 น. สำหรับการอบรม AI">
   <title>ปฏิบัติการ Self-Guided — AI for Admin</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .prompt-box { position: relative; }
+    .copy-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: #2C2A6E;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.85rem;
+      font-family: var(--font-body, 'Sarabun', sans-serif);
+      cursor: pointer;
+      line-height: 1.4;
+    }
+    .copy-btn:hover, .copy-btn:focus { background: #1e1c4e; }
+  </style>
 </head>
 <body>
   <a href="#main" class="skip-link">ข้ามไปยังเนื้อหาหลัก</a>
@@ -20,7 +38,6 @@
         <li><a href="index.html">หน้าแรก</a></li>
         <li><a href="materials.html">เอกสาร</a></li>
         <li><a href="self-guided.html" aria-current="page">ปฏิบัติการ</a></li>
-        <li><a href="display.html">หน้าจอ</a></li>
       </ul>
     </div>
   </nav>
@@ -64,7 +81,7 @@
             <li><strong>Gemma / qwen</strong>: ผ่านหน้าจอแชทที่จัดเตรียมไว้ (พิมพ์ → กดส่ง → อ่านคำตอบ)</li>
           </ul>
 
-          <h3>วิธีใช้หน้าจอแชท (สำหรับผู้เริ่มต้น)</h3>
+          <h3>วิธีใช้หน้าจอแชท</h3>
           <ol class="steps">
             <li>เปิดหน้าเว็บของเครื่องมือ</li>
             <li>คลิกช่องพิมพ์ข้อความ (ปกติอยู่ด้านล่างสุด)</li>
@@ -93,7 +110,7 @@
           <ol class="steps">
             <li>เปิดไฟล์ <a href="data/meeting_minutes_raw.txt" download>meeting_minutes_raw.txt</a> แล้วคัดลอกข้อความทั้งหมด</li>
             <li>ไปที่หน้าต่างแชทของเครื่องมือ AI</li>
-            <li>วางข้อความลงในช่องพิมพ์ พร้อม Prompt ด้านล่าง แล้วกดส่ง</li>
+            <li>วางข้อความลงในช่องพิมพ์ พร้อมข้อความสั่งงานด้านล่าง แล้วกดส่ง</li>
           </ol>
 
           <div class="prompt-box">คุณคือเลขานุการคณะเทคโนโลยีและสิ่งแวดล้อม มหาวิทยาลัยสงขลานครินทร์
@@ -156,7 +173,7 @@
 
           <h3>หลักการจัดระเบียบข้อมูล</h3>
           <ul>
-            <li><strong>1 คอลัมน์ = 1 ตัวแปร</strong> เช่น ชื่อ, แผนก, วันที่</li>
+            <li><strong>1 คอลัมน์ = 1 หัวข้อ</strong> เช่น ชื่อ, แผนก, วันที่</li>
             <li><strong>1 แถว = 1 รายการ</strong> เช่น 1 คน 1 กิจกรรม</li>
             <li><strong>1 ช่อง = 1 ค่า</strong> ไม่มีข้อมูลหลายค่าในช่องเดียว</li>
           </ul>
@@ -165,12 +182,12 @@
           <ol class="steps">
             <li>เปิดไฟล์ <a href="data/untidy_staff_events.csv" download>untidy_staff_events.csv</a> แล้วคัดลอกเนื้อหาทั้งหมด</li>
             <li>ไปที่หน้าต่างแชทของเครื่องมือ AI</li>
-            <li>วางข้อมูลลงในช่องพิมพ์ พร้อม Prompt ด้านล่าง แล้วกดส่ง</li>
+            <li>วางข้อมูลลงในช่องพิมพ์ พร้อมข้อความสั่งงานด้านล่าง แล้วกดส่ง</li>
           </ol>
 
           <div class="prompt-box">คุณคือเจ้าหน้าที่ฝ่ายวิเคราะห์ข้อมูลของคณะเทคโนโลยีและสิ่งแวดล้อม
 ฉันมีข้อมูลกิจกรรมบุคลากรที่บันทึกไม่เป็นระเบียบ ช่วยแปลงให้เป็นตารางที่อ่านง่าย ตามหลักการ:
-- 1 คอลัมน์ = 1 ตัวแปร
+- 1 คอลัมน์ = 1 หัวข้อ
 - 1 แถว = 1 รายการ
 - 1 ช่อง = 1 ค่า
 
@@ -262,7 +279,7 @@
           <h3>ขั้นตอน</h3>
           <ol class="steps">
             <li>ไปที่หน้าต่างแชทของเครื่องมือ AI</li>
-            <li>พิมพ์ Prompt ด้านล่างในช่องพิมพ์ แล้วกดส่ง</li>
+            <li>พิมพ์ข้อความสั่งงานด้านล่างในช่องพิมพ์ แล้วกดส่ง</li>
           </ol>
 
           <div class="prompt-box">คุณคือเจ้าหน้าที่งานเลขานุการของคณะเทคโนโลยีและสิ่งแวดล้อม มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตภูเก็ต
@@ -330,8 +347,106 @@
 
     <section class="section section--mist">
       <div class="container">
+        <h2 style="margin-bottom:var(--s-5)">แบบฝึกหัดเพิ่มเติม: ไฟล์ Word และ Excel</h2>
+        <p style="max-width:70ch;margin-bottom:var(--s-6)">สำหรับผู้ทำ 3 ข้อหลักเสร็จเร็ว หรือต้องการฝึกเพิ่ม ให้ลองทำข้อ 4 หรือข้อ 5 ต่อไปนี้ ทำข้อใดข้อหนึ่งก็ได้ หรือทั้งสองข้อก็ได้</p>
+
+        <article id="exercise-4" class="exercise">
+          <div class="exercise__header">
+            <h2 class="exercise__title">ข้อ 4: จัดระเบียบบันทึกข้อความในไฟล์ Word</h2>
+            <span class="exercise__time">เสริม (ไม่จำกัดเวลา)</span>
+          </div>
+          <span class="exercise__tool">เครื่องมือ: ChatGPT / Claude / Gemma / qwen</span>
+
+          <h3>โจทย์</h3>
+          <p>เปิดไฟล์ Word ที่มีบันทึกข้อความยื่นขออนุมัติ แต่เขียนไม่เป็นระเบียบ ให้ AI ช่วยจัดให้ถูกรูปแบบ</p>
+
+          <h3>ขั้นตอน</h3>
+          <ol class="steps">
+            <li>ดาวน์โหลดไฟล์ <a href="data/memo_draft.docx" download>memo_draft.docx</a> แล้วเปิดด้วย Microsoft Word หรือโปรแกรมอ่านไฟล์ Word</li>
+            <li>เลือกคัดลอกข้อความทั้งหมดในไฟล์</li>
+            <li>ไปที่หน้าต่างแชทของเครื่องมือ AI</li>
+            <li>วางข้อความลงในช่องพิมพ์ พร้อมข้อความสั่งงานด้านล่าง แล้วกดส่ง</li>
+          </ol>
+
+          <div class="prompt-box">คุณคือเจ้าหน้าที่งานเลขานุการของคณะเทคโนโลยีและสิ่งแวดล้อม มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตภูเก็ต
+ฉันมีบันทึกข้อความเขียนไม่เป็นระเบียบ ช่วยจัดให้เป็นบันทึกข้อความทางราชการที่ถูกต้อง ตามโครงสร้างนี้:
+- ที่
+- วันที่
+- เรื่อง
+- เรียน
+- เนื้อหา
+- ขออนุมัติ
+- ลงชื่อ พร้อมตำแหน่ง
+
+ข้อกำหนด:
+- ใช้ภาษาราชการที่สุภาพและกระชับ
+- ไม่ต้องเพิ่มข้อมูลใหม่ นอกจากที่มีในข้อความต้นฉบับ
+- ความยาวไม่เกิน 250 คำ
+
+ข้อความต้นฉบับ:
+[วางข้อความที่คัดลอกมา]</div>
+
+          <h3>ตรวจสอบตนเอง</h3>
+          <ul>
+            <li>มี “ที่” ของบันทึกข้อความ</li>
+            <li>มีวันที่</li>
+            <li>มีเรื่อง</li>
+            <li>มี “เรียน” ผู้รับ</li>
+            <li>มีเนื้อหาสรุปเหตุผล</li>
+            <li>มีการขออนุมัติชัดเจน</li>
+            <li>มีลงชื่อผู้ขออนุมัติ</li>
+          </ul>
+        </article>
+
+        <article id="exercise-5" class="exercise" style="margin-top:var(--s-6)">
+          <div class="exercise__header">
+            <h2 class="exercise__title">ข้อ 5: จัดระเบียบข้อมูลในไฟล์ Excel</h2>
+            <span class="exercise__time">เสริม (ไม่จำกัดเวลา)</span>
+          </div>
+          <span class="exercise__tool">เครื่องมือ: ChatGPT / Claude / Gemma / qwen</span>
+
+          <h3>โจทย์</h3>
+          <p>เปิดไฟล์ Excel ที่มีข้อมูลกิจกรรมบุคลากรบันทึกไม่เป็นระเบียบ ให้ AI ช่วยจัดให้เป็นตารางอ่านง่าย</p>
+
+          <h3>ขั้นตอน</h3>
+          <ol class="steps">
+            <li>ดาวน์โหลดไฟล์ <a href="data/staff_events.xlsx" download>staff_events.xlsx</a> แล้วเปิดด้วย Microsoft Excel หรือโปรแกรมอ่านไฟล์ Excel</li>
+            <li>เลือกคัดลอกข้อมูลทั้งหมดในตาราง</li>
+            <li>ไปที่หน้าต่างแชทของเครื่องมือ AI</li>
+            <li>วางข้อมูลลงในช่องพิมพ์ พร้อมข้อความสั่งงานด้านล่าง แล้วกดส่ง</li>
+          </ol>
+
+          <div class="prompt-box">คุณคือเจ้าหน้าที่ฝ่ายวิเคราะห์ข้อมูลของคณะเทคโนโลยีและสิ่งแวดล้อม
+ฉันมีข้อมูลกิจกรรมบุคลากรจากไฟล์ Excel ที่บันทึกไม่เป็นระเบียบ ช่วยจัดให้เป็นตารางอ่านง่าย ตามหลักการ:
+- 1 คอลัมน์ = 1 หัวข้อ
+- 1 แถว = 1 คน 1 กิจกรรม
+- 1 ช่อง = 1 ค่า
+
+ข้อมูลต้นฉบับ:
+[วางข้อมูลที่คัดลอกมา]
+
+ข้อกำหนด:
+1. แยกคอลัมน์ออกเป็น: ลำดับ, ชื่อ-นามสกุล, แผนก/งาน, ชื่อกิจกรรม, วันที่จัดกิจกรรม, สถานที่, หมายเหตุ
+2. หากช่องใดไม่มีข้อมูล ให้เว้นว่างไว้ แต่แยกคอลัมน์ถูกต้อง
+3. หากมีชื่อหลายคนอยู่ในช่องเดียวกัน ให้แยกเป็นแถวของแต่ละคน
+4. แสดงผลลัพธ์ในรูปแบบตารางที่อ่านง่าย
+5. อธิบายสั้นๆ ว่าแก้ไขอะไรบ้าง</div>
+
+          <h3>ตรวจสอบตนเอง</h3>
+          <ul>
+            <li>มีคอลัมน์: ลำดับ, ชื่อ-นามสกุล, แผนก/งาน, ชื่อกิจกรรม, วันที่จัดกิจกรรม, สถานที่, หมายเหตุ</li>
+            <li>ไม่มีข้อมูลสองค่าอยู่ในช่องเดียวกัน</li>
+            <li>แต่ละแถวคือ 1 คน 1 กิจกรรม</li>
+            <li>ไม่มีแถวว่างค้างอยู่ตรงกลางตาราง</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
         <div class="card">
-          <h2>⏰ สรุปเวลา</h2>
+          <h2>สรุปเวลา</h2>
           <table class="exercise-table" style="width:100%;border-collapse:collapse;margin-top:var(--s-5)">
             <thead>
               <tr>
@@ -354,6 +469,7 @@
               </tr>
             </tbody>
           </table>
+          <p style="margin-top:var(--s-4);color:var(--ink-light)">ข้อ 4 และข้อ 5 เป็นแบบฝึกหัดเสริม ไม่จำกัดเวลา ทำเมื่อเสร็จ 3 ข้อหลักแล้ว</p>
         </div>
       </div>
     </section>
@@ -361,7 +477,7 @@
     <section class="section">
       <div class="container">
         <div class="card">
-          <h2>🔧 แก้ไขปัญหาเบื้องต้น</h2>
+          <h2>แก้ไขปัญหาเบื้องต้น</h2>
           <table style="width:100%;border-collapse:collapse;margin-top:var(--s-5)">
             <thead>
               <tr>
@@ -371,16 +487,16 @@
             </thead>
             <tbody>
               <tr>
-                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">ไม่สามารถเข้า ChatGPT ได้</td>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">เข้า ChatGPT ไม่ได้</td>
                 <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">ลองเปิด Claude, Gemma หรือ qwen แทน</td>
               </tr>
               <tr>
-                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">ไม่สามารถเข้า Claude ได้</td>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">เข้า Claude ไม่ได้</td>
                 <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">ลองเปิด ChatGPT, Gemma หรือ qwen แทน</td>
               </tr>
               <tr>
-                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">AI ตอบช้าหรือขึ้นว่า “quota exceeded”</td>
-                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">สลับไปใช้อีกเครื่องมือหนึ่ง หรือรอ 1–2 นาที</td>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">AI ตอบช้า หรือขึ้นว่าใช้ครบโควต้า</td>
+                <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">“ใช้ครบโควต้า” หมายถึง AI ใช้งานได้ครบตามจำกัดในช่วงนั้นแล้ว ให้สลับไปใช้อีกเครื่องมือหนึ่ง หรือรอ 1–2 นาทีแล้วลองใหม่</td>
               </tr>
               <tr>
                 <td style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)">ลืมขั้นตอนในแบบฝึกหัด</td>
@@ -402,7 +518,7 @@
 
     <section class="section section--purple">
       <div class="container">
-        <h2 style="color:var(--paper);margin-bottom:var(--s-4)">💬 เมื่อวิทยากรกลับมา (11:15 น.)</h2>
+        <h2 style="color:var(--paper);margin-bottom:var(--s-4)">เมื่อวิทยากรกลับมา (11:15 น.)</h2>
         <p style="color:rgba(255,255,255,.8);max-width:66ch">หากท่านมีข้อสงสัยจากแบบฝึกหัดนี้ กรุณาจดไว้และถามในแชท หรือเปิดไมค์ถามเมื่อวิทยากรกลับมา</p>
       </div>
     </section>
@@ -415,5 +531,53 @@
   </footer>
 
   <script src="js/nav.js"></script>
+  <script>
+    (function () {
+      function fallbackCopy(text) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'absolute';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand('copy');
+        } catch (err) {
+          // ignore
+        }
+        document.body.removeChild(ta);
+      }
+
+      document.querySelectorAll('.prompt-box').forEach(function (box) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'copy-btn';
+        btn.textContent = 'คัดลอก';
+        box.appendChild(btn);
+
+        btn.addEventListener('click', function () {
+          var clone = box.cloneNode(true);
+          var copyBtn = clone.querySelector('.copy-btn');
+          if (copyBtn) copyBtn.remove();
+          var text = clone.innerText.trim();
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () {
+              btn.textContent = 'คัดลอกแล้ว';
+              setTimeout(function () { btn.textContent = 'คัดลอก'; }, 1500);
+            }, function () {
+              fallbackCopy(text);
+              btn.textContent = 'คัดลอกแล้ว';
+              setTimeout(function () { btn.textContent = 'คัดลอก'; }, 1500);
+            });
+          } else {
+            fallbackCopy(text);
+            btn.textContent = 'คัดลอกแล้ว';
+            setTimeout(function () { btn.textContent = 'คัดลอก'; }, 1500);
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
